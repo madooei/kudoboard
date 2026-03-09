@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { loadBoards } from "@/data/board-storage";
+import { useBoards } from "@/hooks/use-boards";
 import {
   Card,
   CardDescription,
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
 });
 
 function HomePage() {
-  const [boards] = useState(loadBoards);
+  const { boards } = useBoards();
 
   return (
     <div>
